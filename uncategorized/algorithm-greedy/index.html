@@ -55,28 +55,33 @@
   };
 </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Academia">
-<meta property="og:url" content="https://kencwlau.github.io/index.html">
+  <meta name="description" content="Strategy A greedy algorithm always makes a local optimal choice to explores a global optimal solution. When we are using greedy algorithm, we shall always consider which local optimality we shall ta">
+<meta name="keywords" content="Algorithm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Greedy">
+<meta property="og:url" content="https://kencwlau.github.io/uncategorized/algorithm-greedy/index.html">
 <meta property="og:site_name" content="Academia">
+<meta property="og:description" content="Strategy A greedy algorithm always makes a local optimal choice to explores a global optimal solution. When we are using greedy algorithm, we shall always consider which local optimality we shall ta">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-03T03:42:28.614Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Academia">
-  <link rel="canonical" href="https://kencwlau.github.io/">
+<meta name="twitter:title" content="Greedy">
+<meta name="twitter:description" content="Strategy A greedy algorithm always makes a local optimal choice to explores a global optimal solution. When we are using greedy algorithm, we shall always consider which local optimality we shall ta">
+  <link rel="canonical" href="https://kencwlau.github.io/uncategorized/algorithm-greedy/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Academia</title>
+  <title>Greedy | Academia</title>
   
 
 
@@ -184,12 +189,13 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
+
   <div id="posts" class="posts-expand">
-        <article itemscope itemtype="http://schema.org/Article">
+      <article itemscope itemtype="http://schema.org/Article">
   
   
   
-  <div class="post-block home">
+  <div class="post-block post">
     <link itemprop="mainEntityOfPage" href="https://kencwlau.github.io/uncategorized/algorithm-greedy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -202,9 +208,8 @@
       <meta itemprop="name" content="Academia">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/uncategorized/algorithm-greedy/" class="post-title-link" itemprop="url">Greedy</a>
+        <h1 class="post-title" itemprop="name headline">Greedy
+
           
         </h1>
 
@@ -238,125 +243,82 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="strategy">Strategy</h1>
+        <h1 id="strategy">Strategy</h1>
 <p>A greedy algorithm always makes a local optimal choice to explores a global optimal solution.</p>
-<p>When we are using greedy algorithm, we shall always consider which local optimality we shall take as the measure (or objective function), and prove such local optimality will leads to the global optimality.
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/uncategorized/algorithm-greedy/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
-        <article itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block home">
-    <link itemprop="mainEntityOfPage" href="https://kencwlau.github.io/uncategorized/algorithm-divide-and-conquer/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ken Lau">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Academia">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/uncategorized/algorithm-divide-and-conquer/" class="post-title-link" itemprop="url">Divide and Conquer</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              
-                
-              
-
-              <time title="Created: 2019-10-03 09:20:05 / Modified: 11:42:20" itemprop="dateCreated datePublished" datetime="2019-10-03T09:20:05+08:00">2019-10-03</time>
-            </span>
-          
-            
-
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="strategy">Strategy</h1>
-<p>The divide and conquer paradigm consists of three steps as follows.</p>
+<p>When we are using greedy algorithm, we shall always consider which local optimality we shall take as the measure (or objective function), and prove such local optimality will leads to the global optimality. <a id="more"></a></p>
+<h1 id="activity-selection-problem">Activity Selection Problem</h1>
+<h2 id="definition">Definition</h2>
+<p>Let <span class="math inline">\(S\)</span> be a set of activities with cardinality <span class="math inline">\(n\)</span>, which is <span class="math inline">\(S = \{ a_i : 1 \leq i \leq n \}\)</span>. Each activity <span class="math inline">\(a_i\)</span> is an half-open interval with a start time <span class="math inline">\(s_i\)</span> and a end time <span class="math inline">\(f_i\)</span>, which is <span class="math inline">\(a_i = [s_i, f_i)\)</span>. Activity <span class="math inline">\(a_i\)</span> and <span class="math inline">\(a_j\)</span> are compatible if <span class="math inline">\(a_i \cap a_j = \phi\)</span>.</p>
+<h2 id="local-optimality">Local Optimality</h2>
+<p>One of the local optimality is that always take the smallest finishing time into solution sets.</p>
+<p>The complete algorithm is as follows.</p>
 <ol type="1">
-<li>Divide: Divide the original problem with size <span class="math inline">\(n\)</span> into the problem with smaller size.</li>
-<li>Conquer: Solve the problem with smaller size.</li>
-<li>Combine: Merge the result of the subproblem.
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/uncategorized/algorithm-divide-and-conquer/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
+<li>Add the interval <span class="math inline">\(I \in S\)</span> with the smallest finish solution set <span class="math inline">\(T\)</span>.</li>
+<li>Remove all intervals that intersecting with <span class="math inline">\(I\)</span> from <span class="math inline">\(S\)</span>.</li>
+</ol>
+<p>The time complexity of this algorithm is <span class="math inline">\(\Omega(n \log n)\)</span>.</p>
+<h2 id="correctness">Correctness</h2>
+<p>Let <span class="math inline">\(\left | S \right | = n\)</span>.</p>
+<p>When <span class="math inline">\(n = 1\)</span>, the optimal solution is <span class="math inline">\(T = S\)</span> and it will contains the interval with smallest finishing time. The algorithm is correct.</p>
+<p>We claim that if <span class="math inline">\(I = [s, f]\)</span> be the interval with the smallest finishing time, then there exists a optimal solution set <span class="math inline">\(T\)</span> which contains <span class="math inline">\(I\)</span>.</p>
+<p>Suppose <span class="math inline">\(T^*\)</span> is an arbitrary solution set that does not contain <span class="math inline">\(I\)</span>. We can always convert <span class="math inline">\(T^*\)</span> into solution set that contains <span class="math inline">\(I\)</span> with same cardinality.</p>
+<p>Let <span class="math inline">\(I^* = [s^*, f^*]\)</span> be the interval with the smallest finishing time in <span class="math inline">\(T^*\)</span>, that is, for all interval <span class="math inline">\(J_i \in T^* / \{ I^* \}, 1 \leq i \leq \left | T^* \right | - 1\)</span>, we have <span class="math inline">\(s_i \ leq f^*\)</span>.</p>
+<p>Let <span class="math inline">\(T = (T^* / \{ I^* \}) \cup \{ I \}\)</span>, since <span class="math inline">\(s \leq f &lt; f^* \leq s_i\)</span>, <span class="math inline">\(I\)</span> is also disjoint with all <span class="math inline">\(J_i\)</span> and <span class="math inline">\(\left | T \right | = \left | T^* \right |\)</span>. Therefore, <span class="math inline">\(T\)</span> is also an optimal solution for the problem.</p>
+<p>Assume that the algorithm is correct for all <span class="math inline">\(n \leq k\)</span>.</p>
+<p>When <span class="math inline">\(n = k + 1\)</span>, Let <span class="math inline">\(I\)</span> be the interval with the smallest finishing time in <span class="math inline">\(S\)</span> and <span class="math inline">\(T^*\)</span> be the optimal solution of the <span class="math inline">\(S^* = \{ J : I \cap J = \phi, J \in S \}\)</span>. We will prove that <span class="math inline">\(T^* \cup \{ I \}\)</span> is an optimal solution by contradiction.</p>
+<p>Suppose not, then there exists a solution set <span class="math inline">\(T\)</span> such that <span class="math inline">\(T \in I\)</span> as the result of the above lemma. Since <span class="math inline">\(T^* \cup \{ I \}\)</span> is not optimal, we have <span class="math inline">\(| T^* \cup \{ I \} | &lt; | T |\)</span>.</p>
+<p>On the other hand, since <span class="math inline">\(T / \{ I \}\)</span> is a subset of <span class="math inline">\(S^*\)</span> since every element in <span class="math inline">\(T / \{ I \}\)</span> is disjoint with <span class="math inline">\(I\)</span> and <span class="math inline">\(|T^*|\)</span> is an optimal solution of <span class="math inline">\(S^*\)</span>. We have <span class="math inline">\(|T^*| \geq |T / \{ I \}|\)</span> and thus <span class="math inline">\(|T^* \cup \{ I \}| \geq |T|\)</span>. Contradiction arises.</p>
+<h1 id="huffman-coding">Huffman Coding</h1>
+<h2 id="definition-1">Definition</h2>
+<h2 id="local-optimality-1">Local Optimality</h2>
+<h2 id="correctness-1">Correctness</h2>
+
     </div>
 
     
     
     
+        
+      
+
       <footer class="post-footer">
-          <div class="post-eof"></div>
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/uncategorized/algorithm-divide-and-conquer/" rel="next" title="Divide and Conquer">
+                  <i class="fa fa-chevron-left"></i> Divide and Conquer
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
         
       </footer>
+    
   </div>
   
   
   
   </article>
 
-    
   </div>
-
-  
 
 
           </div>
@@ -375,6 +337,11 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
@@ -387,6 +354,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#strategy"><span class="nav-number">1.</span> <span class="nav-text">Strategy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#activity-selection-problem"><span class="nav-number">2.</span> <span class="nav-text">Activity Selection Problem</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#definition"><span class="nav-number">2.1.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#local-optimality"><span class="nav-number">2.2.</span> <span class="nav-text">Local Optimality</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#correctness"><span class="nav-number">2.3.</span> <span class="nav-text">Correctness</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#huffman-coding"><span class="nav-number">3.</span> <span class="nav-text">Huffman Coding</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#definition-1"><span class="nav-number">3.1.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#local-optimality-1"><span class="nav-number">3.2.</span> <span class="nav-text">Local Optimality</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#correctness-1"><span class="nav-number">3.3.</span> <span class="nav-text">Correctness</span></a></li></ol></li></ol></div>
+        
       </div>
       <!--/noindex-->
 
