@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.2.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.2.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
@@ -16,7 +17,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha256-XOqroi11tY4EFQMR9ZYwZWKj5ZXiftSx36RRuC3anlA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"kencwlau.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kencwlau.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":"system","version":"8.20.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="A place to share my research.">
 <meta property="og:type" content="website">
@@ -199,7 +200,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-05-19 20:54:35 / Modified: 21:42:41" itemprop="dateCreated datePublished" datetime="2024-05-19T20:54:35+08:00">2024-05-19</time>
+      <time title="Created: 2024-05-19 20:54:35 / Modified: 22:48:05" itemprop="dateCreated datePublished" datetime="2024-05-19T20:54:35+08:00">2024-05-19</time>
     </span>
 
   
@@ -216,7 +217,9 @@
 <p>Theorem [Ruzsa, 1996]:<br>Let $A$ and $B$ be finite subsets on an abelian additive group $(\mathbb{G}, +)$, we have<br>$$|A| |B| |A + B| \le |A - B|^3.$$</p>
 <p>Theorem [Tao, 2009]:<br>Let $X$ and $Y$ be <em>independent</em> random variables with finite support on an abelian additive group $(\mathbb{G}, +)$, we have<br>$$H(X) + H(Y) + H(X + Y) \le 3 H(X - Y).$$</p>
 <p>Even thought these two inequalities look similar, there is no direct connection between them. However, their proof have some similarities!</p>
-<h2 id="Ruzsa-Equivalence-Theorem"><a href="#Ruzsa-Equivalence-Theorem" class="headerlink" title="Ruzsa Equivalence Theorem"></a>Ruzsa Equivalence Theorem</h2><p>Definition [Graph-resticted sumset]:<br>Suppose $A$ and $B$ are defined on an ambient additive group $(\mathbb{G}, +)$. Let $G$ be a subset of $A \times B$ (or equivalently <em>a bipartite graph</em>). The $G$-restricted sumset of $A$ and $B$ is defined as $A \overset{G}{+} B :&#x3D; {a + b : (a, b) \in G}$.</p>
+<h2 id="Ruzsa-Equivalence-Theorem"><a href="#Ruzsa-Equivalence-Theorem" class="headerlink" title="Ruzsa Equivalence Theorem"></a>Ruzsa Equivalence Theorem</h2><div class="note default"><p><strong>Definition [Graph-resticted sumset]</strong><br>Suppose $A$ and $B$ are defined on an ambient additive group $(\mathbb{G}, +)$. Let $G$ be a subset of $A \times B$ (or equivalently <em>a bipartite graph</em>). The $G$-restricted sumset of $A$ and $B$ is defined as $A \overset{G}{+} B :&#x3D; {a + b : (a, b) \in G}$.</p>
+</div>
+
 <p>Let $(\mathbb{T}, +)$ be a finitely generated torsion-free abelian group.</p>
 <ul>
 <li><p>$f$, $g_1, \dots, g_\ell$: Linear functions on $\mathbb{T} \times \mathbb{T}$ with integer coefficients.</p>
@@ -236,8 +239,11 @@
 </li>
 </ol>
 <p>An application of Ruzsa&#39;s Equivalence Theorem is as follows,</p>
-<p>Theorem [Katz and Tao, 1999]:<br>Let $A$ and $B$ be finite subsets on an abelian additive group $(\mathbb{G}, +)$, for any $G \subseteq A \times B$, we have<br>$$|A \overset{G}{-} B| \leq |A|^{2&#x2F;3} |B|^{2&#x2F;3} |A \overset{G}{+} B|^{1&#x2F;2}.$$</p>
-<p>Theorem [Ruzsa, 1999]:<br>Let $X$ and $Y$ be random variables with finite support on an abelian additive group $(\mathbb{G}, +)$, we have<br>$$H(X - Y) \leq \frac{2}{3} H(X) + \frac{2}{3} H(Y) + \frac{1}{2} H(X + Y).$$</p>
+<div class="note info"><p><strong>Theorem [Katz and Tao, 1999]</strong><br>Let $A$ and $B$ be finite subsets on an abelian additive group $(\mathbb{G}, +)$, for any $G \subseteq A \times B$, we have<br>$$|A \overset{G}{-} B| \leq |A|^{2&#x2F;3} |B|^{2&#x2F;3} |A \overset{G}{+} B|^{1&#x2F;2}.$$</p>
+</div>
+
+<div class="note info"><p><strong>Theorem [Ruzsa, 1999]</strong><br>Let $X$ and $Y$ be random variables with finite support on an abelian additive group $(\mathbb{G}, +)$, we have<br>$$H(X - Y) \leq \frac{2}{3} H(X) + \frac{2}{3} H(Y) + \frac{1}{2} H(X + Y).$$</p>
+</div>
 
       
     </div>
