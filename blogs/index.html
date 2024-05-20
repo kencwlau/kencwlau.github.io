@@ -289,7 +289,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-05-20 09:09:44" itemprop="dateModified" datetime="2024-05-20T09:09:44+08:00">2024-05-20</time>
+      <time title="Modified: 2024-05-20 09:20:58" itemprop="dateModified" datetime="2024-05-20T09:20:58+08:00">2024-05-20</time>
     </span>
 
   
@@ -302,19 +302,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>There are three kind of the distortion will cause the degradation of signal quality in demodulation process.</p>
+          <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>There are three kinds of distortion that can cause degradation in signal quality during the demodulation process:</p>
 <ul>
-<li>Frequency shift ($\Delta f$): Doppler effect and the property of the channel</li>
-<li>Time delay ($\tau$): Transmission delay</li>
-<li>Phase shift ($\Delta \phi$): The sum of the effect of frequency shift and time delay.</li>
+<li><p>Frequency shift ($\Delta f$): This is caused by factors such as the Doppler effect and channel properties.</p>
+</li>
+<li><p>Time delay ($\tau$): This refers to the delay in transmission.</p>
+</li>
+<li><p>Phase shift ($\Delta \phi$): This is the combined effect of frequency shift and time delay.</p>
+</li>
 </ul>
-<p>The mathematical representation of the received signal with these three distortion is</p>
+<p>The mathematical representation of the received signal considering these three distortions is as follows:</p>
 <p>$$<br>r(t) &#x3D; A v(t - \tau) \cos [2 \pi (f_c + f_d)(t - \tau) + \theta) + n(t)],<br>$$</p>
 <p>which is equivalent to</p>
 <p>$$<br>r(t) &#x3D; A v(t - \tau) \cos [2 \pi (f_c + f_d) t+ \phi) + n(t)], \quad<br>\phi &#x3D; \theta - 2 \pi (f_c + f_d) \tau.<br>$$</p>
-<p>We need to estimate $f_d$, $\tau$ and $\phi$ for improving the quality of the signal. The estimation process is called <em>synchronization</em>.</p>
-<p>The estimation for the carrier phase is called <em>carrier phase synchronization</em> and it is implemented by <em>phase-locked loop (PLL)</em>.</p>
-<p>The estimation for the transmission delay is called <em>symbol time synchronization</em> and it is implemented by <em>delayed-locked loop (DLL)</em>.</p>
+<p>In order to improve the quality of the signal, it is necessary to estimate $f_d$, $\tau$, and $\phi$. This estimation process is referred to as <em>synchronization</em>.</p>
+<p>The estimation for the carrier phase is known as <em>carrier phase synchronization</em> and is implemented using a <em>phase-locked loop (PLL)</em>.</p>
+<p>The estimation for the transmission delay is called <em>symbol time synchronization</em> and is implemented using a <em>delay-locked loop (DLL)</em>.</p>
 <h2 id="Effect-of-Synchronization-Errors"><a href="#Effect-of-Synchronization-Errors" class="headerlink" title="Effect of Synchronization Errors"></a>Effect of Synchronization Errors</h2><p>We will start with a BPSK system.</p>
 <p>$$<br>r(t) &#x3D; \pm A p_T (t - \tau) \cos [2 \pi (f_c + f_d) (t - \tau) + \theta] + n(t) \<br>&#x3D; \pm A p_T (t - \tau) \cos [2 \pi (f_c + f_d) t + \phi] + n(t).<br>$$</p>
 <p>The probability of the bit error is</p>
@@ -322,9 +325,9 @@
 <p>where</p>
 <p>$$<br>\alpha &#x3D; \frac{1}{T} \int^{T + \min(\tau, \hat{\tau})}_{\max(\tau, \hat{\tau})} \cos [2 \pi (f_d - \hat{f_d}) t + (\phi - \hat{\phi})] dt,<br>$$</p>
 <p>$\alpha \leq 1$ and the equality only holds when $\hat{f_d} &#x3D; f_d$ and $\hat{\phi} &#x3D; \phi \mod 2 \pi$. Therefore, the lower bound of the bit error is $Q(\sqrt{\frac{2 E_b}{N_0}})$.</p>
-<p>If $|f_d - \hat{f_d} \ll \frac{1}{T}|$, which mean the frequency deviation is much less than the carrier frequency, then</p>
+<p>If $|f_d - \hat{f_d} \ll \frac{1}{T}|$, which means the frequency deviation is much less than the carrier frequency, then</p>
 <p>$$\alpha \approx (1 - \frac{|\Delta \tau|}{T}) \cos (\Delta \phi).$$</p>
-<p>Therefore, the only significance term for the bit error is the time delay and the phase shift error.</p>
+<p>Therefore, the only significant terms for the bit error are the time delay and the phase shift error.</p>
 
       
     </div>
